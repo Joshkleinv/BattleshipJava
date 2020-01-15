@@ -21,25 +21,25 @@ private static draw Draw = new draw();
 
     public int[][] numberOfShips(int[][] field) {
 
-        field = placeShip(field, 2);
+        field = placeShip(field, 2 ,2);
         Draw.drawField(field);
 
-        field = placeShip(field, 3);
+        field = placeShip(field, 3, 3);
         Draw.drawField(field);
 
-        field = placeShip(field, 3);
+        field = placeShip(field, 3, 4);
         Draw.drawField(field);
 
-        field = placeShip(field, 4);
+        field = placeShip(field, 4, 5);
         Draw.drawField(field);
 
-        field = placeShip(field, 6);
+        field = placeShip(field, 6, 6);
 
         return field;
     }
 
     @Override
-	public int[][] placeShip(int[][] field, int size) {
+	public int[][] placeShip(int[][] field, int size, int ShipId) {
         boolean north  = true;
         boolean east = true;
         boolean south = true;
@@ -102,7 +102,7 @@ private static draw Draw = new draw();
         else{
             west = false;
         }
-        if (xCordinate + shipSize -1 <= 10){
+        if (xCordinate + shipSize -1 < 10){
             for(int i = 1; i < shipSize; i++){
                 if(field[yCordinate][xCordinate + i] == 1){
                     east = false;
@@ -122,7 +122,7 @@ private static draw Draw = new draw();
         else{
             north = false;
         }
-        if (yCordinate + shipSize -1 <= 10){
+        if (yCordinate + shipSize -1 < 10){
             for(int i = 1; i < shipSize; i++){
                 if(field[yCordinate + i][xCordinate] == 1){
                     south = false;

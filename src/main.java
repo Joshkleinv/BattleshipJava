@@ -4,10 +4,10 @@ import src.player.player;
 
 public class main {
 public static void main(String[] args) {
-    playingField test = new playingField();
+    playingField player1Field = new playingField();
     player player = new player();
-    test.drawField(test.field);
-    test.field =  player.numberOfShips(test.field);
-    test.drawFieldWithShips(test.field);
+    player1Field.drawField(player1Field.field);
+    player1Field.field =  player.numberOfShips(player1Field.field);
+    player1Field.drawFieldWithShips(player1Field.field);
 }
 }
